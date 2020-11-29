@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	//--------------------------------------
-	//crop basic form relate info
+	//crop basic form related info
 	Rect targyCrop_roi(175, 175, 315, 22);
 	Rect oktatoCrop_roi(175, 205, 315, 32);
 	Rect datumCrop_roi(560, 175, 180, 30);
@@ -145,11 +145,17 @@ int main(int argc, char* argv[])
 	//--------------------------------------
 	//read the text from each crop
 
-	ocr -> Init(NULL, "eng", OEM_LSTM_ONLY);
+	ocr -> Init(NULL, "hun", OEM_LSTM_ONLY);
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato1NevCrop.data, hallgato1NevCrop.cols, hallgato1NevCrop.rows, 3, hallgato1NevCrop.step);
 	hallgato1.nev = string(ocr -> GetUTF8Text());
+
+	ocr -> End();
+
+	ocr -> Init(NULL, "eng", OEM_LSTM_ONLY);
+	ocr -> SetPageSegMode(PSM_AUTO);
+
 	ocr -> SetImage(hallgato1NeptunkodCrop.data, hallgato1NeptunkodCrop.cols, hallgato1NeptunkodCrop.rows, 3, hallgato1NeptunkodCrop.step);
 	hallgato1.neptunkod = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato1SzakCrop.data, hallgato1SzakCrop.cols, hallgato1SzakCrop.rows, 3, hallgato1SzakCrop.step);
@@ -183,9 +189,19 @@ int main(int argc, char* argv[])
 	ocr -> SetImage(hallgato3EmailCrop.data, hallgato3EmailCrop.cols, hallgato3EmailCrop.rows, 3, hallgato3EmailCrop.step);
 	hallgato3.email = string(ocr -> GetUTF8Text());
 
+	ocr -> End();
+
+	ocr -> Init(NULL, "hun", OEM_LSTM_ONLY);
+	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato4NevCrop.data, hallgato4NevCrop.cols, hallgato4NevCrop.rows, 3, hallgato4NevCrop.step);
 	hallgato4.nev = string(ocr -> GetUTF8Text());
+
+	ocr -> End();
+
+	ocr -> Init(NULL, "eng", OEM_LSTM_ONLY);
+	ocr -> SetPageSegMode(PSM_AUTO);
+
 	ocr -> SetImage(hallgato4NeptunkodCrop.data, hallgato4NeptunkodCrop.cols, hallgato4NeptunkodCrop.rows, 3, hallgato4NeptunkodCrop.step); 
 	hallgato4.neptunkod = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato4SzakCrop.data, hallgato4SzakCrop.cols, hallgato4SzakCrop.rows, 3, hallgato4SzakCrop.step); 
@@ -244,6 +260,7 @@ int main(int argc, char* argv[])
 	//write the results to file
 	ofstream output;
 	output.open("out.txt");
+
 	output << "Tárgy: " << targy;
 	output << "Oktató: " << oktato;
 	output << "Dátum: " << datum;
