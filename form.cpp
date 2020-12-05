@@ -23,13 +23,14 @@ struct hallgato
 	string szak;
 	string telefon;
 	string email;
-} hallgato1, hallgato2, hallgato3, hallgato4, hallgato5, hallgato6;
+};
 
 int main(int argc, char* argv[])
 {
 	//initialize stuff
 	string path = argv[1];
 	string targy, oktato, datum, terem;
+	hallgato hallgatok[6];
 
 	Mat img = imread(path, 1);
 	TessBaseAPI *ocr = new TessBaseAPI();
@@ -149,7 +150,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato1NevCrop.data, hallgato1NevCrop.cols, hallgato1NevCrop.rows, 3, hallgato1NevCrop.step);
-	hallgato1.nev = string(ocr -> GetUTF8Text());
+	hallgatok[0].nev = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -157,37 +158,37 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato1NeptunkodCrop.data, hallgato1NeptunkodCrop.cols, hallgato1NeptunkodCrop.rows, 3, hallgato1NeptunkodCrop.step);
-	hallgato1.neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[0].neptunkod = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato1SzakCrop.data, hallgato1SzakCrop.cols, hallgato1SzakCrop.rows, 3, hallgato1SzakCrop.step);
-	hallgato1.szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[0].szak = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato1TelefonCrop.data, hallgato1TelefonCrop.cols, hallgato1TelefonCrop.rows, 3, hallgato1TelefonCrop.step);
-	hallgato1.telefon = string(ocr -> GetUTF8Text());
+	hallgatok[0].telefon = string(ocr -> GetUTF8Text());
 	ocr -> SetImage(hallgato1EmailCrop.data, hallgato1EmailCrop.cols, hallgato1EmailCrop.rows, 3, hallgato1EmailCrop.step);
-	hallgato1.email = string(ocr -> GetUTF8Text());
+	hallgatok[0].email = string(ocr -> GetUTF8Text());
 
 
 	ocr -> SetImage(hallgato2NevCrop.data, hallgato2NevCrop.cols, hallgato2NevCrop.rows, 3, hallgato2NevCrop.step);
-	hallgato2.nev = string(ocr -> GetUTF8Text());
+	hallgatok[1].nev = string(ocr -> GetUTF8Text());
 	ocr -> SetImage(hallgato2NeptunkodCrop.data, hallgato2NeptunkodCrop.cols, hallgato2NeptunkodCrop.rows, 3, hallgato2NeptunkodCrop.step);
-	hallgato2.neptunkod = string(ocr -> GetUTF8Text());  
+	hallgatok[1].neptunkod = string(ocr -> GetUTF8Text());  
 	ocr -> SetImage(hallgato2SzakCrop.data, hallgato2SzakCrop.cols, hallgato2SzakCrop.rows, 3, hallgato2SzakCrop.step); 
-	hallgato2.szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[1].szak = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato2TelefonCrop.data, hallgato2TelefonCrop.cols, hallgato2TelefonCrop.rows, 3, hallgato2TelefonCrop.step);
-	hallgato2.telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[1].telefon = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato2EmailCrop.data, hallgato2EmailCrop.cols, hallgato2EmailCrop.rows, 3, hallgato2EmailCrop.step);
-	hallgato2.email = string(ocr -> GetUTF8Text());
+	hallgatok[1].email = string(ocr -> GetUTF8Text());
 
 
 	ocr -> SetImage(hallgato3NevCrop.data, hallgato3NevCrop.cols, hallgato3NevCrop.rows, 3, hallgato3NevCrop.step);
-	hallgato3.nev = string(ocr -> GetUTF8Text());
+	hallgatok[2].nev = string(ocr -> GetUTF8Text());
 	ocr -> SetImage(hallgato3NeptunkodCrop.data, hallgato3NeptunkodCrop.cols, hallgato3NeptunkodCrop.rows, 3, hallgato3NeptunkodCrop.step); 
-	hallgato3.neptunkod = string(ocr -> GetUTF8Text());
+	hallgatok[2].neptunkod = string(ocr -> GetUTF8Text());
 	ocr -> SetImage(hallgato3SzakCrop.data, hallgato3SzakCrop.cols, hallgato3SzakCrop.rows, 3, hallgato3SzakCrop.step); 
-	hallgato3.szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[2].szak = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato3TelefonCrop.data, hallgato3TelefonCrop.cols, hallgato3TelefonCrop.rows, 3, hallgato3TelefonCrop.step);
-	hallgato3.telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[2].telefon = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato3EmailCrop.data, hallgato3EmailCrop.cols, hallgato3EmailCrop.rows, 3, hallgato3EmailCrop.step);
-	hallgato3.email = string(ocr -> GetUTF8Text());
+	hallgatok[2].email = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -195,7 +196,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato4NevCrop.data, hallgato4NevCrop.cols, hallgato4NevCrop.rows, 3, hallgato4NevCrop.step);
-	hallgato4.nev = string(ocr -> GetUTF8Text());
+	hallgatok[3].nev = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -203,13 +204,13 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato4NeptunkodCrop.data, hallgato4NeptunkodCrop.cols, hallgato4NeptunkodCrop.rows, 3, hallgato4NeptunkodCrop.step); 
-	hallgato4.neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[3].neptunkod = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato4SzakCrop.data, hallgato4SzakCrop.cols, hallgato4SzakCrop.rows, 3, hallgato4SzakCrop.step); 
-	hallgato4.szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[3].szak = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato4TelefonCrop.data, hallgato4TelefonCrop.cols, hallgato4TelefonCrop.rows, 3, hallgato4TelefonCrop.step); 
-	hallgato4.telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[3].telefon = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato4EmailCrop.data, hallgato4EmailCrop.cols, hallgato4EmailCrop.rows, 3, hallgato4EmailCrop.step);
-	hallgato4.email = string(ocr -> GetUTF8Text());
+	hallgatok[3].email = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -217,7 +218,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato5NevCrop.data, hallgato5NevCrop.cols, hallgato5NevCrop.rows, 3, hallgato5NevCrop.step);
-	hallgato5.nev = string(ocr -> GetUTF8Text());
+	hallgatok[4].nev = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -225,13 +226,13 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato5NeptunkodCrop.data, hallgato5NeptunkodCrop.cols, hallgato5NeptunkodCrop.rows, 3, hallgato5NeptunkodCrop.step); 
-	hallgato5.neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[4].neptunkod = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato5SzakCrop.data, hallgato5SzakCrop.cols, hallgato5SzakCrop.rows, 3, hallgato5SzakCrop.step); 
-	hallgato5.szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[4].szak = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato5TelefonCrop.data, hallgato5TelefonCrop.cols, hallgato5TelefonCrop.rows, 3, hallgato5TelefonCrop.step); 
-	hallgato5.telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[4].telefon = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato5EmailCrop.data, hallgato5EmailCrop.cols, hallgato5EmailCrop.rows, 3, hallgato5EmailCrop.step);
-	hallgato5.email = string(ocr -> GetUTF8Text());
+	hallgatok[4].email = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -239,7 +240,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato6NevCrop.data, hallgato6NevCrop.cols, hallgato6NevCrop.rows, 3, hallgato6NevCrop.step);
-	hallgato6.nev = string(ocr -> GetUTF8Text());
+	hallgatok[5].nev = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -247,13 +248,13 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 	
 	ocr -> SetImage(hallgato6NeptunkodCrop.data, hallgato6NeptunkodCrop.cols, hallgato6NeptunkodCrop.rows, 3, hallgato6NeptunkodCrop.step); 
-	hallgato6.neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[5].neptunkod = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato6SzakCrop.data, hallgato6SzakCrop.cols, hallgato6SzakCrop.rows, 3, hallgato6SzakCrop.step); 
-	hallgato6.szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[5].szak = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato6TelefonCrop.data, hallgato6TelefonCrop.cols, hallgato6TelefonCrop.rows, 3, hallgato6TelefonCrop.step); 
-	hallgato6.telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[5].telefon = string(ocr -> GetUTF8Text()); 
 	ocr -> SetImage(hallgato6EmailCrop.data, hallgato6EmailCrop.cols, hallgato6EmailCrop.rows, 3, hallgato6EmailCrop.step);
-	hallgato6.email = string(ocr -> GetUTF8Text());
+	hallgatok[5].email = string(ocr -> GetUTF8Text());
 
 	ocr -> End();
 
@@ -267,55 +268,28 @@ int main(int argc, char* argv[])
 	output << "Terem: " << terem;
 	output << endl;
 
-	output << "Név: " << hallgato1.nev;
-	output << "Neptun kód: " << hallgato1.neptunkod;
-	output << "Szak: " << hallgato1.szak;
-	output << "Telefonszám: " << hallgato1.telefon;
-	output << "E-mail cím: " << hallgato1.email;
-	output << endl;
+	for (int i = 0; i < 6; ++i)
+	{
+		output << "Név: " << hallgatok[i].nev;
+		output << "Neptun kód: " << hallgatok[i].neptunkod;
+		output << "Szak: " << hallgatok[i].szak;
+		output << "Telefonszám: " << hallgatok[i].telefon;
+		output << "E-mail cím: " << hallgatok[i].email;
+		output << endl;
+	}
 
-	output << "Név: " << hallgato2.nev;
-	output << "Neptun kód: " << hallgato2.neptunkod;
-	output << "Szak: " << hallgato2.szak;
-	output << "Telefonszám: " << hallgato2.telefon;
-	output << "E-mail cím: " << hallgato2.email;
-	output << endl;
 
-	output << "Név: " << hallgato3.nev;
-	output << "Neptun kód: " << hallgato3.neptunkod;
-	output << "Szak: " << hallgato3.szak;
-	output << "Telefonszám: " << hallgato3.telefon;
-	output << "E-mail cím: " << hallgato3.email;
-	output << endl;
-
-	output << "Név: " << hallgato4.nev;
-	output << "Neptun kód: " << hallgato4.neptunkod;
-	output << "Szak: " << hallgato4.szak;
-	output << "Telefonszám: " << hallgato4.telefon;
-	output << "E-mail cím: " << hallgato4.email;
-	output << endl;
-
-	output << "Név: " << hallgato5.nev;
-	output << "Neptun kód: " << hallgato5.neptunkod;
-	output << "Szak: " << hallgato5.szak;
-	output << "Telefonszám: " << hallgato5.telefon;
-	output << "E-mail cím: " << hallgato5.email;
-	output << endl;
-
-	output << "Név: " << hallgato6.nev;
-	output << "Neptun kód: " << hallgato6.neptunkod;
-	output << "Szak: " << hallgato6.szak;
-	output << "Telefonszám: " << hallgato6.telefon;
-	output << "E-mail cím: " << hallgato6.email;
 
 	output.close();
 
+	/*
 	imshow("1", hallgato5NevCrop);
 	imshow("2", hallgato5NeptunkodCrop);
 	imshow("3", hallgato5SzakCrop);
 	imshow("4", hallgato5TelefonCrop);
 	imshow("5", hallgato5EmailCrop);
 	waitKey();
+	*/
 
 	return 0;
 }
