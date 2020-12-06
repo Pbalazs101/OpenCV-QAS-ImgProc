@@ -52,19 +52,19 @@ int main(int argc, char* argv[])
 
 	//read basic info from crops
 	ocr -> SetImage(targyCrop.data, targyCrop.cols, targyCrop.rows, 3, targyCrop.step);
-	targy = string(ocr -> GetUTF8Text());
+	targy = ocr -> GetUTF8Text();
 	cout << targy << endl;
 
 	ocr -> SetImage(oktatoCrop.data, oktatoCrop.cols, oktatoCrop.rows, 3, oktatoCrop.step);
-	oktato = string(ocr -> GetUTF8Text());
+	oktato = ocr -> GetUTF8Text();
 	cout << oktato << endl;
 
 	ocr -> SetImage(datumCrop.data, datumCrop.cols, datumCrop.rows, 3, datumCrop.step);
-	datum = string(ocr -> GetUTF8Text());
+	datum = ocr -> GetUTF8Text();
 	cout << datum << endl;
 
 	ocr -> SetImage(teremCrop.data, teremCrop.cols, teremCrop.rows, 3, teremCrop.step);
-	terem = string(ocr -> GetUTF8Text());
+	terem = ocr -> GetUTF8Text();
 	cout << terem << endl;
 
 	ocr -> End();
@@ -150,7 +150,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato1NevCrop.data, hallgato1NevCrop.cols, hallgato1NevCrop.rows, 3, hallgato1NevCrop.step);
-	hallgatok[0].nev = string(ocr -> GetUTF8Text());
+	hallgatok[0].nev = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -158,37 +158,37 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato1NeptunkodCrop.data, hallgato1NeptunkodCrop.cols, hallgato1NeptunkodCrop.rows, 3, hallgato1NeptunkodCrop.step);
-	hallgatok[0].neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[0].neptunkod = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato1SzakCrop.data, hallgato1SzakCrop.cols, hallgato1SzakCrop.rows, 3, hallgato1SzakCrop.step);
-	hallgatok[0].szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[0].szak = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato1TelefonCrop.data, hallgato1TelefonCrop.cols, hallgato1TelefonCrop.rows, 3, hallgato1TelefonCrop.step);
-	hallgatok[0].telefon = string(ocr -> GetUTF8Text());
+	hallgatok[0].telefon = ocr -> GetUTF8Text();
 	ocr -> SetImage(hallgato1EmailCrop.data, hallgato1EmailCrop.cols, hallgato1EmailCrop.rows, 3, hallgato1EmailCrop.step);
-	hallgatok[0].email = string(ocr -> GetUTF8Text());
+	hallgatok[0].email = ocr -> GetUTF8Text();
 
 
 	ocr -> SetImage(hallgato2NevCrop.data, hallgato2NevCrop.cols, hallgato2NevCrop.rows, 3, hallgato2NevCrop.step);
-	hallgatok[1].nev = string(ocr -> GetUTF8Text());
+	hallgatok[1].nev = ocr -> GetUTF8Text();
 	ocr -> SetImage(hallgato2NeptunkodCrop.data, hallgato2NeptunkodCrop.cols, hallgato2NeptunkodCrop.rows, 3, hallgato2NeptunkodCrop.step);
-	hallgatok[1].neptunkod = string(ocr -> GetUTF8Text());  
+	hallgatok[1].neptunkod = ocr -> GetUTF8Text();  
 	ocr -> SetImage(hallgato2SzakCrop.data, hallgato2SzakCrop.cols, hallgato2SzakCrop.rows, 3, hallgato2SzakCrop.step); 
-	hallgatok[1].szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[1].szak = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato2TelefonCrop.data, hallgato2TelefonCrop.cols, hallgato2TelefonCrop.rows, 3, hallgato2TelefonCrop.step);
-	hallgatok[1].telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[1].telefon = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato2EmailCrop.data, hallgato2EmailCrop.cols, hallgato2EmailCrop.rows, 3, hallgato2EmailCrop.step);
-	hallgatok[1].email = string(ocr -> GetUTF8Text());
+	hallgatok[1].email = ocr -> GetUTF8Text();
 
 
 	ocr -> SetImage(hallgato3NevCrop.data, hallgato3NevCrop.cols, hallgato3NevCrop.rows, 3, hallgato3NevCrop.step);
-	hallgatok[2].nev = string(ocr -> GetUTF8Text());
+	hallgatok[2].nev = ocr -> GetUTF8Text();
 	ocr -> SetImage(hallgato3NeptunkodCrop.data, hallgato3NeptunkodCrop.cols, hallgato3NeptunkodCrop.rows, 3, hallgato3NeptunkodCrop.step); 
-	hallgatok[2].neptunkod = string(ocr -> GetUTF8Text());
+	hallgatok[2].neptunkod = ocr -> GetUTF8Text();
 	ocr -> SetImage(hallgato3SzakCrop.data, hallgato3SzakCrop.cols, hallgato3SzakCrop.rows, 3, hallgato3SzakCrop.step); 
-	hallgatok[2].szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[2].szak = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato3TelefonCrop.data, hallgato3TelefonCrop.cols, hallgato3TelefonCrop.rows, 3, hallgato3TelefonCrop.step);
-	hallgatok[2].telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[2].telefon = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato3EmailCrop.data, hallgato3EmailCrop.cols, hallgato3EmailCrop.rows, 3, hallgato3EmailCrop.step);
-	hallgatok[2].email = string(ocr -> GetUTF8Text());
+	hallgatok[2].email = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -196,7 +196,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato4NevCrop.data, hallgato4NevCrop.cols, hallgato4NevCrop.rows, 3, hallgato4NevCrop.step);
-	hallgatok[3].nev = string(ocr -> GetUTF8Text());
+	hallgatok[3].nev = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -204,13 +204,13 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato4NeptunkodCrop.data, hallgato4NeptunkodCrop.cols, hallgato4NeptunkodCrop.rows, 3, hallgato4NeptunkodCrop.step); 
-	hallgatok[3].neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[3].neptunkod = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato4SzakCrop.data, hallgato4SzakCrop.cols, hallgato4SzakCrop.rows, 3, hallgato4SzakCrop.step); 
-	hallgatok[3].szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[3].szak = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato4TelefonCrop.data, hallgato4TelefonCrop.cols, hallgato4TelefonCrop.rows, 3, hallgato4TelefonCrop.step); 
-	hallgatok[3].telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[3].telefon = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato4EmailCrop.data, hallgato4EmailCrop.cols, hallgato4EmailCrop.rows, 3, hallgato4EmailCrop.step);
-	hallgatok[3].email = string(ocr -> GetUTF8Text());
+	hallgatok[3].email = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -218,7 +218,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato5NevCrop.data, hallgato5NevCrop.cols, hallgato5NevCrop.rows, 3, hallgato5NevCrop.step);
-	hallgatok[4].nev = string(ocr -> GetUTF8Text());
+	hallgatok[4].nev = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -226,13 +226,13 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato5NeptunkodCrop.data, hallgato5NeptunkodCrop.cols, hallgato5NeptunkodCrop.rows, 3, hallgato5NeptunkodCrop.step); 
-	hallgatok[4].neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[4].neptunkod = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato5SzakCrop.data, hallgato5SzakCrop.cols, hallgato5SzakCrop.rows, 3, hallgato5SzakCrop.step); 
-	hallgatok[4].szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[4].szak = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato5TelefonCrop.data, hallgato5TelefonCrop.cols, hallgato5TelefonCrop.rows, 3, hallgato5TelefonCrop.step); 
-	hallgatok[4].telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[4].telefon = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato5EmailCrop.data, hallgato5EmailCrop.cols, hallgato5EmailCrop.rows, 3, hallgato5EmailCrop.step);
-	hallgatok[4].email = string(ocr -> GetUTF8Text());
+	hallgatok[4].email = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -240,7 +240,7 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 
 	ocr -> SetImage(hallgato6NevCrop.data, hallgato6NevCrop.cols, hallgato6NevCrop.rows, 3, hallgato6NevCrop.step);
-	hallgatok[5].nev = string(ocr -> GetUTF8Text());
+	hallgatok[5].nev = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -248,13 +248,13 @@ int main(int argc, char* argv[])
 	ocr -> SetPageSegMode(PSM_AUTO);
 	
 	ocr -> SetImage(hallgato6NeptunkodCrop.data, hallgato6NeptunkodCrop.cols, hallgato6NeptunkodCrop.rows, 3, hallgato6NeptunkodCrop.step); 
-	hallgatok[5].neptunkod = string(ocr -> GetUTF8Text()); 
+	hallgatok[5].neptunkod = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato6SzakCrop.data, hallgato6SzakCrop.cols, hallgato6SzakCrop.rows, 3, hallgato6SzakCrop.step); 
-	hallgatok[5].szak = string(ocr -> GetUTF8Text()); 
+	hallgatok[5].szak = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato6TelefonCrop.data, hallgato6TelefonCrop.cols, hallgato6TelefonCrop.rows, 3, hallgato6TelefonCrop.step); 
-	hallgatok[5].telefon = string(ocr -> GetUTF8Text()); 
+	hallgatok[5].telefon = ocr -> GetUTF8Text(); 
 	ocr -> SetImage(hallgato6EmailCrop.data, hallgato6EmailCrop.cols, hallgato6EmailCrop.rows, 3, hallgato6EmailCrop.step);
-	hallgatok[5].email = string(ocr -> GetUTF8Text());
+	hallgatok[5].email = ocr -> GetUTF8Text();
 
 	ocr -> End();
 
@@ -277,8 +277,6 @@ int main(int argc, char* argv[])
 		output << "E-mail cím: " << hallgatok[i].email;
 		output << endl;
 	}
-
-
 
 	output.close();
 
